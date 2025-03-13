@@ -3,7 +3,18 @@ import { ref } from "vue";
 
 export const useCounter = defineStore("counter", () => {
   const counter = ref<number>(0);
+
+  function increment() {
+    counter.value++;
+  }
+
+  function reset() {
+    counter.value = 0;
+  }
+
   return {
     counter,
+    increment,
+    reset,
   };
 });

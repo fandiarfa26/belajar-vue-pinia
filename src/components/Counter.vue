@@ -6,20 +6,29 @@ counterStore.$subscribe((mutation, state) => {
   console.log(mutation);
   console.log(state);
 });
+counterStore.$onAction((action) => {
+  console.log(action);
+});
 
-function handleClick() {
-  counterStore.counter++;
+function handleIncrement() {
+  // counterStore.counter++;
+
+  // jika menggunakan action store
+  counterStore.increment();
 }
 
 function handleReset() {
-  //counterStore.counter = 0;
+  // counterStore.counter = 0;
   // atau menggunakan $patch untuk mengubah beberapa nilai state sekaligus
-  counterStore.$patch({ counter: 0 });
+  // counterStore.$patch({ counter: 0 });
+
+  // jika menggunakan action store
+  counterStore.reset();
 }
 </script>
 
 <template>
   <h1>Counter: {{ counterStore.counter }}</h1>
-  <button @click="handleClick">Increment</button>
+  <button @click="handleIncrement">Increment</button>
   <button @click="handleReset">Reset</button>
 </template>
