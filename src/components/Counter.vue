@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useCounter } from "../store.ts";
+import { useCounter } from "../store/useCounter.ts";
 
 const counterStore = useCounter();
 counterStore.$subscribe((mutation, state) => {
