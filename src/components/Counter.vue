@@ -29,6 +29,7 @@ function handleReset() {
 
 <template>
   <h1>Counter: {{ counterStore.counter }}</h1>
+  <h2>Doubled: {{ counterStore.doubled }}</h2>
   <button @click="handleIncrement">Increment</button>
   <button @click="handleReset">Reset</button>
 </template>
